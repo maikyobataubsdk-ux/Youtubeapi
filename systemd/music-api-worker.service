@@ -1,0 +1,16 @@
+[Unit]
+Description=Telegram Music API worker pool
+After=network-online.target redis-server.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/telegram_music_api
+EnvironmentFile=/opt/telegram_music_api/.env
+ExecStart=/opt/telegram_music_api/venv/bin/python worker.py
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
