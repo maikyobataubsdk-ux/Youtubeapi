@@ -1,0 +1,9 @@
+# Install with:
+# python3 -m pip install -U -r requirements.txt
+#
+# This file intentionally keeps compatible version ranges rather than
+# freezing a stale yt-dlp build.
+fastapi>=0.115,<1
+uvicorn[standard]>=0.34,<1
+redis>=5.2,<6
+yt-dlp>=2026.8.19
